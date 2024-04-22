@@ -1,13 +1,13 @@
 services:
 
   client-service:
-    image: nabeelktr/eduwise-client:latest 
+    image: nabeelktr/eduwise-client-v1:latest 
     ports:
       - "3000:3000"
-    networks:
-      - eduwise-network
     depends_on:
       - api-gateway
+    networks:
+      - eduwise-network
 
   api-gateway:
     image: nabeelktr/eduwise-gateway:latest
@@ -63,6 +63,3 @@ volumes:
 networks:
   eduwise-network:
     driver: bridge  
-
-
-
